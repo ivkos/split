@@ -5,8 +5,8 @@
 int main(int argc, char *argv[]) {
 	char part_filename[200];
 	FILE *ptr_source, *ptr_part;
-	size_t parts, i, written_bytes;
-	unsigned long int part_size;
+	size_t parts, i;
+	unsigned long int part_size, written_bytes;
 	int byte;
 
 	if (argc != 3) {
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
 			fputc(byte, ptr_part);
 		}
 
-		printf("(%u bytes)", written_bytes);
+		printf("(%lu bytes)", written_bytes);
 		fclose(ptr_part);
 	}
 
